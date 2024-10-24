@@ -1,0 +1,52 @@
+﻿@page "/customers/details"
+@using Microsoft.EntityFrameworkCore
+@using CustomerManagement.Models
+@inject IDbContextFactory<CustomerManagement.Data.CustomerManagementContext> DbFactory
+@inject NavigationManager NavigationManager
+
+<PageTitle>Details</PageTitle>
+
+<h1>Details</h1>
+
+<div>
+    <h2>Customer</h2>
+    <hr />
+    @if (customer is null)
+    {
+        <p><em>Loading...</em></p>
+    }
+    else {
+        <dl class="row">
+            <dt class="col-sm-2">CustomerName</dt>
+            <dd class="col-sm-10">@customer.CustomerName</dd>
+            <dt class="col-sm-2">CustomerFirstName</dt>
+            <dd class="col-sm-10">@customer.CustomerFirstName</dd>
+            <dt class="col-sm-2">CustomerPhone</dt>
+            <dd class="col-sm-10">@customer.CustomerPhone</dd>
+            <dt class="col-sm-2">CustomerEmail</dt>
+            <dd class="col-sm-10">@customer.CustomerEmail</dd>
+        </dl>
+        <div>
+            <a href="@($"/customers/edit?customerid={customer.CustomerId}")">Edit</a> |
+            <a href="@($"/customers")">Back to List</a>
+        </div>
+    }
+</div>
+
+@code {
+    private Customer? customer;
+
+    [SupplyParameterFromQuery]
+    private int CustomerId { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        using var context = DbFactory.CreateDbContext();
+        customer = await context.Customer.FirstOrDefaultAsync(m => m.CustomerId == CustomerId);
+
+        if (customer is null)
+        {
+            NavigationManager.NavigateTo("notfound");
+        }
+    }
+}

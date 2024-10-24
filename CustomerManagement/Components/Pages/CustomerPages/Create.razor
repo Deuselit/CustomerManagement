@@ -1,0 +1,59 @@
+﻿@page "/customers/create"
+@using Microsoft.EntityFrameworkCore
+@using CustomerManagement.Models
+@inject IDbContextFactory<CustomerManagement.Data.CustomerManagementContext> DbFactory
+@inject NavigationManager NavigationManager
+
+<PageTitle>Create</PageTitle>
+
+<h1>Create</h1>
+
+<h2>Customer</h2>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <EditForm method="post" Model="Customer" OnValidSubmit="AddCustomer" FormName="create" Enhance>
+            <DataAnnotationsValidator />
+            <ValidationSummary class="text-danger" />
+            <div class="mb-3">
+                <label for="customername" class="form-label">CustomerName:</label> 
+                <InputText id="customername" @bind-Value="Customer.CustomerName" class="form-control" /> 
+                <ValidationMessage For="() => Customer.CustomerName" class="text-danger" /> 
+            </div>        
+            <div class="mb-3">
+                <label for="customerfirstname" class="form-label">CustomerFirstName:</label> 
+                <InputText id="customerfirstname" @bind-Value="Customer.CustomerFirstName" class="form-control" /> 
+                <ValidationMessage For="() => Customer.CustomerFirstName" class="text-danger" /> 
+            </div>        
+            <div class="mb-3">
+                <label for="customerphone" class="form-label">CustomerPhone:</label> 
+                <InputText id="customerphone" @bind-Value="Customer.CustomerPhone" class="form-control" /> 
+                <ValidationMessage For="() => Customer.CustomerPhone" class="text-danger" /> 
+            </div>        
+            <div class="mb-3">
+                <label for="customeremail" class="form-label">CustomerEmail:</label> 
+                <InputText id="customeremail" @bind-Value="Customer.CustomerEmail" class="form-control" /> 
+                <ValidationMessage For="() => Customer.CustomerEmail" class="text-danger" /> 
+            </div>        
+            <button type="submit" class="btn btn-primary">Create</button>
+        </EditForm>
+    </div>
+</div>
+
+<div>
+    <a href="/customers">Back to List</a>
+</div>
+
+@code {
+    [SupplyParameterFromForm]
+    private Customer Customer { get; set; } = new();
+
+    // To protect from overposting attacks, see https://learn.microsoft.com/aspnet/core/blazor/forms/#mitigate-overposting-attacks.
+    private async Task AddCustomer()
+    {
+        using var context = DbFactory.CreateDbContext();
+        context.Customer.Add(Customer);
+        await context.SaveChangesAsync();
+        NavigationManager.NavigateTo("/customers");
+    }
+}
