@@ -274,3 +274,4 @@ C:\Users\David\Desktop\Programming\C#\CustomerManagement\CustomerManagement\bin\
 C:\Users\David\Desktop\Programming\C#\CustomerManagement\CustomerManagement\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Scripting.resources.dll
 C:\Users\David\Desktop\Programming\C#\CustomerManagement\CustomerManagement\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Scripting.resources.dll
 C:\Users\David\Desktop\Programming\C#\CustomerManagement\CustomerManagement\obj\Debug\net8.0\CustomerManagement.sourcelink.json
+C:\Users\David\Desktop\Programming\C#\CustomerManagement\CustomerManagement\obj\Debug\net8.0\scopedcss\Components\Layout\EmptyLayout.razor.rz.scp.css

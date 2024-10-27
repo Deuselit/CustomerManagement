@@ -1,6 +1,13 @@
 ﻿@inherits LayoutComponentBase
+@using CustomerManagement.Components.UI
 
-@Body
+<RadzenLayout>
+    <Sidebar/>
+
+    <div class="main-content" style="padding:3%">
+        @Body
+    </div>
+</RadzenLayout>
 
 <div id="blazor-error-ui">
     An unhandled error has occurred.

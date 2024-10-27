@@ -1,0 +1,10 @@
+﻿@inject NavigationManager NavigationManager
+@rendermode RenderMode.InteractiveServer
+
+<RadzenButton Click="@(() => NavigationManager.NavigateTo(NavigationUrl))" Text="@ButtonTitle" Icon="@ButtonIcon" ButtonStyle="ButtonStyle.Base" />
+
+@code {
+    [Parameter] public string NavigationUrl { get; set; } = "/";
+    [Parameter] public string ButtonTitle { get; set; } = "Missing Title";
+    [Parameter] public string ButtonIcon { get; set; } = "Unknown Med";
+}

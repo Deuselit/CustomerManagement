@@ -1,21 +1,9 @@
-﻿<RadzenLayout Style="grid-template-areas: 'rz-sidebar rz-header' 'rz-sidebar rz-body'">
-    <RadzenHeader>
-        <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center" Gap="0">
-            <RadzenSidebarToggle Click="@(() => sidebarExpanded = !sidebarExpanded)" />
-            <RadzenLabel Text="Header" />
-        </RadzenStack>
-    </RadzenHeader>
-    <RadzenSidebar @bind-Expanded="@sidebarExpanded">
+﻿<RadzenLayout>
+    <RadzenSidebar>
         <RadzenPanelMenu>
             <RadzenPanelMenuItem Text="Home" Icon="home" Path="/" />
-            <RadzenPanelMenuItem Text="Users" Icon="Groups" Path="/Users" />
+            <RadzenPanelMenuItem Text="Customers" Icon="Groups" Path="/customers" />
+            <RadzenPanelMenuItem Text="Employees" Icon="Group" Path="/employees" />
         </RadzenPanelMenu>
-        <div class="rz-p-4">
-            Sidebar
-        </div>
     </RadzenSidebar>
 </RadzenLayout>
-
-@code {
-    bool sidebarExpanded = true;
-}

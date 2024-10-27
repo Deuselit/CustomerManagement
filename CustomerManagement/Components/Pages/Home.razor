@@ -1,11 +1,13 @@
 ﻿@page "/"
-@using CustomerManagement.Components.UI
+@using CustomerManagement.Components.Layout
+@layout EmptyLayout
 
 <PageTitle>Home</PageTitle>
-<div style="flex-direction:row; display:flex" >
-	<Sidebar/>
 
-	<h1>Hello, world!</h1>
-
-	Welcome to your new app.
-</div>
+<RadzenStack Style="height: 100vh" Orientation="Orientation.Vertical" AlignItems="AlignItems.Center" JustifyContent="JustifyContent.Center">
+	<RadzenText TextStyle="TextStyle.H1" Text="Alpha" />
+	<RadzenStack Orientation="Orientation.Horizontal">
+		<DefaultButton NavigationUrl="/customers" ButtonTitle="Customers" ButtonIcon="Groups" />
+		<DefaultButton NavigationUrl="/employees" ButtonTitle="Employees" ButtonIcon="Group" />
+	</RadzenStack>
+</RadzenStack>

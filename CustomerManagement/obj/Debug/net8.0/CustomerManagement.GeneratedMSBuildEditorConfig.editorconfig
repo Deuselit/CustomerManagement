@@ -30,24 +30,16 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBcHAucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/David/Desktop/Programming/C\#/CustomerManagement/CustomerManagement/Components/Pages/CustomerPages/Create.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDdXN0b21lclBhZ2VzXENyZWF0ZS5yYXpvcg==
+[C:/Users/David/Desktop/Programming/C\#/CustomerManagement/CustomerManagement/Components/Pages/CustomerPages/Adresses.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDdXN0b21lclBhZ2VzXEFkcmVzc2VzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/David/Desktop/Programming/C\#/CustomerManagement/CustomerManagement/Components/Pages/CustomerPages/Delete.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDdXN0b21lclBhZ2VzXERlbGV0ZS5yYXpvcg==
+[C:/Users/David/Desktop/Programming/C\#/CustomerManagement/CustomerManagement/Components/Pages/CustomerPages/Customers.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDdXN0b21lclBhZ2VzXEN1c3RvbWVycy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/David/Desktop/Programming/C\#/CustomerManagement/CustomerManagement/Components/Pages/CustomerPages/Details.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDdXN0b21lclBhZ2VzXERldGFpbHMucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/David/Desktop/Programming/C\#/CustomerManagement/CustomerManagement/Components/Pages/CustomerPages/Edit.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDdXN0b21lclBhZ2VzXEVkaXQucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/David/Desktop/Programming/C\#/CustomerManagement/CustomerManagement/Components/Pages/CustomerPages/Index.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDdXN0b21lclBhZ2VzXEluZGV4LnJhem9y
+[C:/Users/David/Desktop/Programming/C\#/CustomerManagement/CustomerManagement/Components/Pages/Employees.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xFbXBsb3llZXMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/David/Desktop/Programming/C\#/CustomerManagement/CustomerManagement/Components/Pages/Error.razor]
@@ -58,12 +50,12 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xIb21lLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/David/Desktop/Programming/C\#/CustomerManagement/CustomerManagement/Components/Pages/Users.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xVc2Vycy5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/David/Desktop/Programming/C\#/CustomerManagement/CustomerManagement/Components/Routes.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xSb3V0ZXMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/David/Desktop/Programming/C\#/CustomerManagement/CustomerManagement/Components/UI/Items/DefaultButton.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xVSVxJdGVtc1xEZWZhdWx0QnV0dG9uLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/David/Desktop/Programming/C\#/CustomerManagement/CustomerManagement/Components/UI/Sidebar.razor]
@@ -73,6 +65,10 @@ build_metadata.AdditionalFiles.CssScope =
 [C:/Users/David/Desktop/Programming/C\#/CustomerManagement/CustomerManagement/Components/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xfSW1wb3J0cy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/David/Desktop/Programming/C\#/CustomerManagement/CustomerManagement/Components/Layout/EmptyLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcRW1wdHlMYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-dnraep1618
 
 [C:/Users/David/Desktop/Programming/C\#/CustomerManagement/CustomerManagement/Components/Layout/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTWFpbkxheW91dC5yYXpvcg==

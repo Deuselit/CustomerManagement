@@ -1,0 +1,132 @@
+﻿@page "/customers"
+@rendermode RenderMode.InteractiveServer
+@using Microsoft.EntityFrameworkCore
+@using CustomerManagement.Models
+@using CustomerManagement.Components.Layout
+@inject IDbContextFactory<CustomerManagement.Data.CustomerManagementContext> DbFactory
+@inject NavigationManager NavigationManager
+
+<RadzenDataGrid @ref="grid" AllowFiltering="true" AllowColumnResize="true"
+                FilterMode="FilterMode.Simple" PageSize="10" AllowPaging="true" AllowSorting="true" Data="@customers" TItem="Customer"
+                ColumnWidth="300px" FilterCaseSensitivity="@filterCaseSensitivity" LogicalFilterOperator="@logicalFilterOperator"
+                EditMode="DataGridEditMode.Single" RowUpdate="OnUpdateRow" RowDelete="OnDeleteRow">
+    <Columns>
+        <RadzenDataGridColumn TItem="Customer" Property="CustomerName" Title="Last Name">
+            <EditTemplate Context="customer">
+                <RadzenTextBox @bind-Value="customer.CustomerName" Style="width: 100%;" />
+            </EditTemplate>
+        </RadzenDataGridColumn>
+
+        <RadzenDataGridColumn TItem="Customer" Property="CustomerFirstName" Title="First Name">
+            <EditTemplate Context="customer">
+                <RadzenTextBox @bind-Value="customer.CustomerFirstName" Style="width: 100%;" />
+            </EditTemplate>
+        </RadzenDataGridColumn>
+        
+        <RadzenDataGridColumn TItem="Customer" Property="CustomerEmail" Title="E-Mail">
+            <EditTemplate Context="customer">
+                <RadzenTextBox @bind-Value="customer.CustomerEmail" Style="width: 100%;" />
+            </EditTemplate>
+        </RadzenDataGridColumn>
+        
+        <RadzenDataGridColumn TItem="Customer" Property="CustomerPhone" Title="Phone">
+            <EditTemplate Context="customer">
+                <RadzenTextBox @bind-Value="customer.CustomerPhone" Style="width: 100%;" />
+            </EditTemplate>
+        </RadzenDataGridColumn>
+
+        <RadzenDataGridColumn TItem="Customer" Title="Addresses">
+            <Template Context="customer">
+                <RadzenButton Text="Addresses" Click="@(() => NavigateToAddress(customer.CustomerId))" />
+            </Template>
+        </RadzenDataGridColumn>
+
+
+        <!-- Actions Column -->
+        <RadzenDataGridColumn TItem="Customer" Title="Actions">
+            <Template Context="customer">
+                <RadzenButton Icon="edit" Click="@(args => grid.EditRow(customer))" />
+                <RadzenButton Icon="delete" Click="@(args => OnDeleteRow(customer))" />
+            </Template>
+            <EditTemplate Context="customer">
+                <RadzenButton Icon="save" Click="@(args => grid.UpdateRow(customer))" />
+                <RadzenButton Icon="cancel" Click="@(args => grid.CancelEditRow(customer))" />
+            </EditTemplate>
+        </RadzenDataGridColumn>
+    </Columns>
+</RadzenDataGrid>
+
+<!-- Add Button -->
+<RadzenButton Icon="add_circle" Text="Add New Customer" Click="AddRow" />
+
+
+@code {
+    RadzenDataGrid<Customer> grid;
+
+    LogicalFilterOperator logicalFilterOperator = LogicalFilterOperator.And;
+    FilterCaseSensitivity filterCaseSensitivity = FilterCaseSensitivity.CaseInsensitive;
+
+    IEnumerable<Customer> customers;
+
+    protected override async Task OnInitializedAsync()
+    {
+        using var context = DbFactory.CreateDbContext();
+        await base.OnInitializedAsync();
+
+        customers = await context.Customer.ToListAsync();
+    }
+
+    private async Task AddRow()
+    {
+        var newCustomer = new Customer();
+        customers = customers.Append(newCustomer);
+        grid.EditRow(newCustomer);
+    }
+
+    private async Task OnUpdateRow(Customer customer)
+    {
+        try
+        {
+            using var context = DbFactory.CreateDbContext();
+
+            var existingCustomer= context.Customer.Find(customer.CustomerId);
+
+            if (existingCustomer is not null)
+            {
+                existingCustomer = customer;
+            }
+            else
+            {
+                context.Customer.Add(customer);
+            }
+
+            await context.SaveChangesAsync();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error on update: {ex.Message}");
+        }
+    }
+
+    private async Task OnDeleteRow(Customer customer)
+    {
+        try
+        {
+            using var context = DbFactory.CreateDbContext();
+            context.Customer.Remove(customer);
+            await context.SaveChangesAsync();
+
+            this.customers = this.customers.Where(a => a.CustomerId != customer.CustomerId);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error on delete: {ex.Message}");
+        }
+    }
+
+    private void NavigateToAddress(int customerId)
+    {
+        NavigationManager.NavigateTo($"customers/address?customerid={customerId}");
+    }
+
+}
