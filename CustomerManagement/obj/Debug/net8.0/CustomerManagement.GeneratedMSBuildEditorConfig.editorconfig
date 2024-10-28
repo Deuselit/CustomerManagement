@@ -30,16 +30,16 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBcHAucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/David/Desktop/Programming/C\#/CustomerManagement/CustomerManagement/Components/Pages/CustomerPages/Adresses.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDdXN0b21lclBhZ2VzXEFkcmVzc2VzLnJhem9y
+[C:/Users/David/Desktop/Programming/C\#/CustomerManagement/CustomerManagement/Components/Pages/DBPages/Adresses.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xEQlBhZ2VzXEFkcmVzc2VzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/David/Desktop/Programming/C\#/CustomerManagement/CustomerManagement/Components/Pages/CustomerPages/Customers.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDdXN0b21lclBhZ2VzXEN1c3RvbWVycy5yYXpvcg==
+[C:/Users/David/Desktop/Programming/C\#/CustomerManagement/CustomerManagement/Components/Pages/DBPages/Customers.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xEQlBhZ2VzXEN1c3RvbWVycy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/David/Desktop/Programming/C\#/CustomerManagement/CustomerManagement/Components/Pages/Employees.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xFbXBsb3llZXMucmF6b3I=
+[C:/Users/David/Desktop/Programming/C\#/CustomerManagement/CustomerManagement/Components/Pages/DBPages/Employees.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xEQlBhZ2VzXEVtcGxveWVlcy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/David/Desktop/Programming/C\#/CustomerManagement/CustomerManagement/Components/Pages/Error.razor]

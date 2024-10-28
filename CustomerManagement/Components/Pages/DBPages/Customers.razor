@@ -6,6 +6,10 @@
 @inject IDbContextFactory<CustomerManagement.Data.CustomerManagementContext> DbFactory
 @inject NavigationManager NavigationManager
 
+<RadzenStack Orientation="Orientation.Vertical" AlignItems="AlignItems.Center" JustifyContent="JustifyContent.Center" Style="padding-top:0.5%; background-color:var(--rz-primary)">
+    <RadzenText TextStyle="TextStyle.H4" Text="Customers" Style="color:var(--rz-on-primary)" />
+</RadzenStack>
+
 <RadzenDataGrid @ref="grid" AllowFiltering="true" AllowColumnResize="true"
                 FilterMode="FilterMode.Simple" PageSize="10" AllowPaging="true" AllowSorting="true" Data="@customers" TItem="Customer"
                 ColumnWidth="300px" FilterCaseSensitivity="@filterCaseSensitivity" LogicalFilterOperator="@logicalFilterOperator"
@@ -89,11 +93,16 @@
         {
             using var context = DbFactory.CreateDbContext();
 
-            var existingCustomer= context.Customer.Find(customer.CustomerId);
+            var existingCustomer = await context.Customer.FindAsync(customer.CustomerId);
 
             if (existingCustomer is not null)
             {
-                existingCustomer = customer;
+                existingCustomer.CustomerName = customer.CustomerName;
+                existingCustomer.CustomerFirstName = customer.CustomerFirstName;
+                existingCustomer.CustomerPhone = customer.CustomerPhone;
+                existingCustomer.CustomerEmail = customer.CustomerEmail;
+
+                context.Customer.Update(existingCustomer);
             }
             else
             {
@@ -126,7 +135,7 @@
 
     private void NavigateToAddress(int customerId)
     {
-        NavigationManager.NavigateTo($"customers/address?customerid={customerId}");
+        NavigationManager.NavigateTo($"customers/addresses?customerid={customerId}");
     }
 
 }

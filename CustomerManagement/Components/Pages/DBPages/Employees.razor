@@ -1,0 +1,135 @@
+﻿@page "/employees"
+@rendermode RenderMode.InteractiveServer
+@using Microsoft.EntityFrameworkCore
+@using CustomerManagement.Models
+@using CustomerManagement.Components.Layout
+@inject IDbContextFactory<CustomerManagement.Data.CustomerManagementContext> DbFactory
+@inject NavigationManager NavigationManager
+
+<RadzenStack Orientation="Orientation.Vertical" AlignItems="AlignItems.Center" JustifyContent="JustifyContent.Center" Style="padding-top:0.5%; background-color:var(--rz-primary)">
+    <RadzenText TextStyle="TextStyle.H4" Text="Employees" Style="color:var(--rz-on-primary)" />
+</RadzenStack>
+
+<RadzenDataGrid @ref="grid" AllowFiltering="true" AllowColumnResize="true"
+                FilterMode="FilterMode.Simple" PageSize="10" AllowPaging="true" AllowSorting="true" Data="@employees" TItem="Employee"
+                ColumnWidth="300px" FilterCaseSensitivity="@filterCaseSensitivity" LogicalFilterOperator="@logicalFilterOperator"
+                EditMode="DataGridEditMode.Single" RowUpdate="OnUpdateRow" RowDelete="OnDeleteRow">
+    <Columns>
+        <RadzenDataGridColumn TItem="Employee" Property="EmployeeName" Title="Last Name">
+            <EditTemplate Context="employee">
+                <RadzenTextBox @bind-Value="employee.EmployeeName" Style="width: 100%;" />
+            </EditTemplate>
+        </RadzenDataGridColumn>
+
+        <RadzenDataGridColumn TItem="Employee" Property="EmployeeFirstName" Title="First Name">
+            <EditTemplate Context="employee">
+                <RadzenTextBox @bind-Value="employee.EmployeeFirstName" Style="width: 100%;" />
+            </EditTemplate>
+        </RadzenDataGridColumn>
+
+        <RadzenDataGridColumn TItem="Employee" Property="EmployeeEmail" Title="E-Mail">
+            <EditTemplate Context="employee">
+                <RadzenTextBox @bind-Value="employee.EmployeeEmail" Style="width: 100%;" />
+            </EditTemplate>
+        </RadzenDataGridColumn>
+
+        <RadzenDataGridColumn TItem="Employee" Property="EmployeePhone" Title="Phone">
+            <EditTemplate Context="employee">
+                <RadzenTextBox @bind-Value="employee.EmployeePhone" Style="width: 100%;" />
+            </EditTemplate>
+        </RadzenDataGridColumn>
+
+
+        <!-- Actions Column -->
+        <RadzenDataGridColumn TItem="Employee" Title="Actions">
+            <Template Context="employee">
+                <RadzenButton Icon="edit" Click="@(args => grid.EditRow(employee))" />
+                <RadzenButton Icon="delete" Click="@(args => OnDeleteRow(employee))" />
+            </Template>
+            <EditTemplate Context="employee">
+                <RadzenButton Icon="save" Click="@(args => grid.UpdateRow(employee))" />
+                <RadzenButton Icon="cancel" Click="@(args => grid.CancelEditRow(employee))" />
+            </EditTemplate>
+        </RadzenDataGridColumn>
+    </Columns>
+</RadzenDataGrid>
+
+<!-- Add Button -->
+<RadzenButton Icon="add_circle" Text="Add New Customer" Click="AddRow" />
+
+
+@code {
+    RadzenDataGrid<Employee> grid;
+
+    LogicalFilterOperator logicalFilterOperator = LogicalFilterOperator.And;
+    FilterCaseSensitivity filterCaseSensitivity = FilterCaseSensitivity.CaseInsensitive;
+
+    IEnumerable<Employee> employees;
+
+    protected override async Task OnInitializedAsync()
+    {
+        using var context = DbFactory.CreateDbContext();
+        await base.OnInitializedAsync();
+
+        employees = await context.Employee.ToListAsync();
+    }
+
+    private async Task AddRow()
+    {
+        var newEmployee = new Employee();
+        employees = employees.Append(newEmployee);
+        grid.EditRow(newEmployee);
+    }
+
+    private async Task OnUpdateRow(Employee employee)
+    {
+        try
+        {
+            using var context = DbFactory.CreateDbContext();
+
+            var existingEmployee = await context.Employee.FindAsync(employee.EmployeeId);
+
+            if (existingEmployee is not null)
+            {
+                existingEmployee.EmployeeName = employee.EmployeeName;
+                existingEmployee.EmployeeFirstName = employee.EmployeeFirstName;
+                existingEmployee.EmployeeEmail = employee.EmployeeEmail;
+                existingEmployee.EmployeePhone = employee.EmployeePhone;
+
+                context.Employee.Update(existingEmployee);
+            }
+            else
+            {
+                context.Employee.Add(employee);
+            }
+
+            await context.SaveChangesAsync();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error on update: {ex.Message}");
+        }
+    }
+
+    private async Task OnDeleteRow(Employee employee)
+    {
+        try
+        {
+            using var context = DbFactory.CreateDbContext();
+            context.Employee.Remove(employee);
+            await context.SaveChangesAsync();
+
+            this.employees = this.employees.Where(a => a.EmployeeId != employee.EmployeeId);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error on delete: {ex.Message}");
+        }
+    }
+
+    private void NavigateToAddress(int customerId)
+    {
+        NavigationManager.NavigateTo($"customers/address?customerid={customerId}");
+    }
+
+}

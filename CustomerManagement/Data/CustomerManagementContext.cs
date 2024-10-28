@@ -16,5 +16,6 @@ namespace CustomerManagement.Data
 
         public DbSet<CustomerManagement.Models.Customer> Customer { get; set; } = default!;
         public DbSet<CustomerManagement.Models.Address> Address { get; set; } = default!;
+        public DbSet<CustomerManagement.Models.Employee> Employee { get; set; } = default!;
     }
 }

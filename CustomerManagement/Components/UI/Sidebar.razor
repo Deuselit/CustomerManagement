@@ -1,9 +1,15 @@
-﻿<RadzenLayout>
+﻿@rendermode RenderMode.InteractiveServer
+
+<RadzenLayout>
     <RadzenSidebar>
         <RadzenPanelMenu>
             <RadzenPanelMenuItem Text="Home" Icon="home" Path="/" />
             <RadzenPanelMenuItem Text="Customers" Icon="Groups" Path="/customers" />
             <RadzenPanelMenuItem Text="Employees" Icon="Group" Path="/employees" />
+
+            <RadzenStack Orientation="Orientation.Vertical" AlignItems="AlignItems.Center" JustifyContent="JustifyContent.End">
+                <RadzenAppearanceToggle />
+            </RadzenStack>
         </RadzenPanelMenu>
     </RadzenSidebar>
 </RadzenLayout>

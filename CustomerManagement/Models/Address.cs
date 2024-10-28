@@ -15,5 +15,8 @@ namespace CustomerManagement.Models
         public string? EmployeeFullName { get; set; }
 
         public int CustomerId { get; set; }
+
+        public int? EmployeeId { get; set; }
+        public Employee? Employee { get; set; }
     }
 }

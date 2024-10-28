@@ -1,9 +1,14 @@
-﻿@page "/customers/address"
+﻿@page "/customers/addresses"
 @rendermode RenderMode.InteractiveServer
 @using Microsoft.EntityFrameworkCore
 @using CustomerManagement.Models
 @using CustomerManagement.Components.Layout
 @inject IDbContextFactory<CustomerManagement.Data.CustomerManagementContext> DbFactory
+@inject NavigationManager NavigationManager
+
+<RadzenStack Orientation="Orientation.Vertical" AlignItems="AlignItems.Center" JustifyContent="JustifyContent.Center" Style="padding-top:0.5%; background-color:var(--rz-primary)">
+    <RadzenText TextStyle="TextStyle.H4" Text="Addresses" Style="color:var(--rz-on-primary)" />
+</RadzenStack>
 
 <RadzenDataGrid @ref="grid" AllowFiltering="true" AllowColumnResize="true"
                 FilterMode="FilterMode.Simple" PageSize="10" AllowPaging="true" AllowSorting="true" Data="@addresses" TItem="Address"
@@ -40,11 +45,21 @@
             </EditTemplate>
         </RadzenDataGridColumn>
 
-        <RadzenDataGridColumn TItem="Address" Property="EmployeeFullName" Title="Employee">
+        <!-- Employee Column with Display and Edit Templates -->
+        <RadzenDataGridColumn TItem="Address" Title="Employee">
+            <Template Context="address">
+                @employees.FirstOrDefault(e => e.EmployeeId == address.EmployeeId)?.EmployeeFullName
+            </Template>
             <EditTemplate Context="address">
-                <RadzenTextBox @bind-Value="address.EmployeeFullName" Style="width: 100%;" />
+                <RadzenDropDown @bind-Value="address.EmployeeId"
+                                Data="@employees"
+                                TextProperty="EmployeeFullName"
+                                ValueProperty="EmployeeId"
+                                Placeholder="Employees"
+                                Style="width: 100%;" />
             </EditTemplate>
         </RadzenDataGridColumn>
+
 
         <!-- Actions Column -->
         <RadzenDataGridColumn TItem="Address" Title="Actions">
@@ -72,15 +87,18 @@
     FilterCaseSensitivity filterCaseSensitivity = FilterCaseSensitivity.CaseInsensitive;
 
     IEnumerable<Address> addresses;
+    IEnumerable<Employee> employees;
 
     protected override async Task OnInitializedAsync()
     {
-        using var context = DbFactory.CreateDbContext();
+        var context = DbFactory.CreateDbContext();
         await base.OnInitializedAsync();
 
         var customer = await context.Customer
                             .Include(c => c.Address)
                             .SingleOrDefaultAsync(e => e.CustomerId == CustomerId);
+
+        employees = context.Employee.ToList();
 
         if (customer != null)
         {
@@ -101,11 +119,20 @@
         {
             using var context = DbFactory.CreateDbContext();
 
-            var existingAddr = context.Address.Find(address.AddressId);
+            var existingAddr = await context.Address.FindAsync(address.AddressId);
 
-            if(existingAddr is not null)
+            if (existingAddr is not null)
             {
-                existingAddr = address;
+                existingAddr.Country = address.Country;
+                existingAddr.Region = address.Region;
+                existingAddr.ZipCode = address.ZipCode;
+                existingAddr.City = address.City;
+                existingAddr.Street = address.Street;
+
+                existingAddr.CustomerId = address.CustomerId;
+                existingAddr.EmployeeId = address.EmployeeId;
+
+                context.Address.Update(existingAddr);
             }
             else
             {
