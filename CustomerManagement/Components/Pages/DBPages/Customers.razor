@@ -12,7 +12,7 @@
 
 <RadzenDataGrid @ref="grid" AllowFiltering="true" AllowColumnResize="true"
                 FilterMode="FilterMode.Simple" PageSize="10" AllowPaging="true" AllowSorting="true" Data="@customers" TItem="Customer"
-                ColumnWidth="300px" FilterCaseSensitivity="@filterCaseSensitivity" LogicalFilterOperator="@logicalFilterOperator"
+                ColumnWidth="250px" FilterCaseSensitivity="@filterCaseSensitivity" LogicalFilterOperator="@logicalFilterOperator"
                 EditMode="DataGridEditMode.Single" RowUpdate="OnUpdateRow" RowDelete="OnDeleteRow">
     <Columns>
         <RadzenDataGridColumn TItem="Customer" Property="CustomerName" Title="Last Name">
@@ -39,7 +39,7 @@
             </EditTemplate>
         </RadzenDataGridColumn>
 
-        <RadzenDataGridColumn TItem="Customer" Title="Addresses">
+        <RadzenDataGridColumn TItem="Customer" Title="Addresses" Width="150px">
             <Template Context="customer">
                 <RadzenButton Text="Addresses" Click="@(() => NavigateToAddress(customer.CustomerId))" />
             </Template>
@@ -47,7 +47,7 @@
 
 
         <!-- Actions Column -->
-        <RadzenDataGridColumn TItem="Customer" Title="Actions">
+        <RadzenDataGridColumn TItem="Customer" Title="Actions" Width="100px">
             <Template Context="customer">
                 <RadzenButton Icon="edit" Click="@(args => grid.EditRow(customer))" />
                 <RadzenButton Icon="delete" Click="@(args => OnDeleteRow(customer))" />

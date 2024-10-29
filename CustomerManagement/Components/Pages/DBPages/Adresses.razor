@@ -12,7 +12,7 @@
 
 <RadzenDataGrid @ref="grid" AllowFiltering="true" AllowColumnResize="true"
                 FilterMode="FilterMode.Simple" PageSize="10" AllowPaging="true" AllowSorting="true" Data="@addresses" TItem="Address"
-                ColumnWidth="300px" FilterCaseSensitivity="@filterCaseSensitivity" LogicalFilterOperator="@logicalFilterOperator"
+                ColumnWidth="250px" FilterCaseSensitivity="@filterCaseSensitivity" LogicalFilterOperator="@logicalFilterOperator"
                 EditMode="DataGridEditMode.Single" RowUpdate="OnUpdateRow" RowDelete="OnDeleteRow">
     <Columns>
         <RadzenDataGridColumn TItem="Address" Property="Country" Title="Country">
@@ -62,7 +62,7 @@
 
 
         <!-- Actions Column -->
-        <RadzenDataGridColumn TItem="Address" Title="Actions">
+        <RadzenDataGridColumn TItem="Address" Title="Actions" Width="100px">
             <Template Context="address">
                 <RadzenButton Icon="edit" Click="@(args => grid.EditRow(address))" />
                 <RadzenButton Icon="delete" Click="@(args => OnDeleteRow(address))" />

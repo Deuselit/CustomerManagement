@@ -2,14 +2,15 @@
 
 <RadzenLayout>
     <RadzenSidebar>
-        <RadzenPanelMenu>
-            <RadzenPanelMenuItem Text="Home" Icon="home" Path="/" />
-            <RadzenPanelMenuItem Text="Customers" Icon="Groups" Path="/customers" />
-            <RadzenPanelMenuItem Text="Employees" Icon="Group" Path="/employees" />
-
-            <RadzenStack Orientation="Orientation.Vertical" AlignItems="AlignItems.Center" JustifyContent="JustifyContent.End">
+        <RadzenPanelMenu Style="height:100vh">
+            <RadzenRow Style="height:95%; flex-direction:column" RowGap="0">
+                <RadzenPanelMenuItem Text="Home" Icon="home" Path="/" />
+                <RadzenPanelMenuItem Text="Customers" Icon="Groups" Path="/customers" />
+                <RadzenPanelMenuItem Text="Employees" Icon="Group" Path="/employees" />
+            </RadzenRow>
+            <RadzenRow JustifyContent="JustifyContent.Center" Style="height:5%">
                 <RadzenAppearanceToggle />
-            </RadzenStack>
+            </RadzenRow>
         </RadzenPanelMenu>
     </RadzenSidebar>
 </RadzenLayout>
