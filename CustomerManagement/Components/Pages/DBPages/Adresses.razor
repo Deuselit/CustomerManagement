@@ -6,160 +6,169 @@
 @inject IDbContextFactory<CustomerManagement.Data.CustomerManagementContext> DbFactory
 @inject NavigationManager NavigationManager
 
+<PageTitle>Addresses</PageTitle>
+
 <RadzenStack Orientation="Orientation.Vertical" AlignItems="AlignItems.Center" JustifyContent="JustifyContent.Center" Style="padding-top:0.5%; background-color:var(--rz-primary)">
-    <RadzenText TextStyle="TextStyle.H4" Text="Addresses" Style="color:var(--rz-on-primary)" />
+	<RadzenText TextStyle="TextStyle.H4" Text="@customerFullName" Style="color:var(--rz-on-primary)" />
 </RadzenStack>
 
 <RadzenDataGrid @ref="grid" AllowFiltering="true" AllowColumnResize="true"
-                FilterMode="FilterMode.Simple" PageSize="10" AllowPaging="true" AllowSorting="true" Data="@addresses" TItem="Address"
-                ColumnWidth="250px" FilterCaseSensitivity="@filterCaseSensitivity" LogicalFilterOperator="@logicalFilterOperator"
-                EditMode="DataGridEditMode.Single" RowUpdate="OnUpdateRow" RowDelete="OnDeleteRow">
-    <Columns>
-        <RadzenDataGridColumn TItem="Address" Property="Country" Title="Country">
-            <EditTemplate Context="address">
-                <RadzenTextBox @bind-Value="address.Country" Style="width: 100%;" />
-            </EditTemplate>
-        </RadzenDataGridColumn>
+				FilterMode="FilterMode.Simple" PageSize="10" AllowPaging="true" AllowSorting="true" Data="@addresses" TItem="Address"
+				ColumnWidth="250px" FilterCaseSensitivity="@filterCaseSensitivity" LogicalFilterOperator="@logicalFilterOperator"
+				EditMode="DataGridEditMode.Single" RowUpdate="OnUpdateRow" RowDelete="OnDeleteRow">
+	<Columns>
+		<RadzenDataGridColumn TItem="Address" Property="Country" Title="Country">
+			<EditTemplate Context="address">
+				<RadzenTextBox @bind-Value="address.Country" Style="width: 100%;" />
+			</EditTemplate>
+		</RadzenDataGridColumn>
 
-        <RadzenDataGridColumn TItem="Address" Property="Region" Title="Region">
-            <EditTemplate Context="address">
-                <RadzenTextBox @bind-Value="address.Region" Style="width: 100%;" />
-            </EditTemplate>
-        </RadzenDataGridColumn>
+		<RadzenDataGridColumn TItem="Address" Property="Region" Title="Region">
+			<EditTemplate Context="address">
+				<RadzenTextBox @bind-Value="address.Region" Style="width: 100%;" />
+			</EditTemplate>
+		</RadzenDataGridColumn>
 
-        <RadzenDataGridColumn TItem="Address" Property="ZipCode" Title="ZipCode">
-            <EditTemplate Context="address">
-                <RadzenTextBox @bind-Value="address.ZipCode" Style="width: 100%;" />
-            </EditTemplate>
-        </RadzenDataGridColumn>
+		<RadzenDataGridColumn TItem="Address" Property="ZipCode" Title="ZipCode">
+			<EditTemplate Context="address">
+				<RadzenTextBox @bind-Value="address.ZipCode" Style="width: 100%;" />
+			</EditTemplate>
+		</RadzenDataGridColumn>
 
-        <RadzenDataGridColumn TItem="Address" Property="City" Title="City">
-            <EditTemplate Context="address">
-                <RadzenTextBox @bind-Value="address.City" Style="width: 100%;" />
-            </EditTemplate>
-        </RadzenDataGridColumn>
+		<RadzenDataGridColumn TItem="Address" Property="City" Title="City">
+			<EditTemplate Context="address">
+				<RadzenTextBox @bind-Value="address.City" Style="width: 100%;" />
+			</EditTemplate>
+		</RadzenDataGridColumn>
 
-        <RadzenDataGridColumn TItem="Address" Property="Street" Title="Street">
-            <EditTemplate Context="address">
-                <RadzenTextBox @bind-Value="address.Street" Style="width: 100%;" />
-            </EditTemplate>
-        </RadzenDataGridColumn>
+		<RadzenDataGridColumn TItem="Address" Property="Street" Title="Street">
+			<EditTemplate Context="address">
+				<RadzenTextBox @bind-Value="address.Street" Style="width: 100%;" />
+			</EditTemplate>
+		</RadzenDataGridColumn>
 
-        <!-- Employee Column with Display and Edit Templates -->
-        <RadzenDataGridColumn TItem="Address" Title="Employee">
-            <Template Context="address">
-                @employees.FirstOrDefault(e => e.EmployeeId == address.EmployeeId)?.EmployeeFullName
-            </Template>
-            <EditTemplate Context="address">
-                <RadzenDropDown @bind-Value="address.EmployeeId"
-                                Data="@employees"
-                                TextProperty="EmployeeFullName"
-                                ValueProperty="EmployeeId"
-                                Placeholder="Employees"
-                                Style="width: 100%;" />
-            </EditTemplate>
-        </RadzenDataGridColumn>
+		<!-- Employee Column with Display and Edit Templates -->
+		<RadzenDataGridColumn TItem="Address" Title="Employee">
+			<Template Context="address">
+				@employees.FirstOrDefault(e => e.EmployeeId == address.EmployeeId)?.EmployeeFullName
+			</Template>
+			<EditTemplate Context="address">
+				<RadzenDropDown @bind-Value="address.EmployeeId"
+								Data="@employees"
+								TextProperty="EmployeeFullName"
+								ValueProperty="EmployeeId"
+								Placeholder="Employees"
+								Style="width: 100%;" />
+			</EditTemplate>
+		</RadzenDataGridColumn>
 
 
-        <!-- Actions Column -->
-        <RadzenDataGridColumn TItem="Address" Title="Actions" Width="100px">
-            <Template Context="address">
-                <RadzenButton Icon="edit" Click="@(args => grid.EditRow(address))" />
-                <RadzenButton Icon="delete" Click="@(args => OnDeleteRow(address))" />
-            </Template>
-            <EditTemplate Context="address">
-                <RadzenButton Icon="save" Click="@(args => grid.UpdateRow(address))" />
-                <RadzenButton Icon="cancel" Click="@(args => grid.CancelEditRow(address))" />
-            </EditTemplate>
-        </RadzenDataGridColumn>
-    </Columns>
+		<!-- Actions Column -->
+		<RadzenDataGridColumn TItem="Address" Title="Actions" Width="100px">
+			<Template Context="address">
+				<RadzenButton Icon="edit" Click="@(args => grid.EditRow(address))" />
+				<RadzenButton Icon="delete" Click="@(args => OnDeleteRow(address))" />
+			</Template>
+			<EditTemplate Context="address">
+				<RadzenButton Icon="save" Click="@(args => grid.UpdateRow(address))" />
+				<RadzenButton Icon="cancel" Click="@(args => grid.CancelEditRow(address))" />
+			</EditTemplate>
+		</RadzenDataGridColumn>
+	</Columns>
 </RadzenDataGrid>
 
 <!-- Add Button -->
 <RadzenButton Icon="add_circle" Text="Add New Address" Click="AddRow" />
 
 @code {
-    [SupplyParameterFromQuery]
-    private int CustomerId { get; set; }
+	[SupplyParameterFromQuery]
+	private int CustomerId { get; set; }
 
-    RadzenDataGrid<Address> grid;
-    LogicalFilterOperator logicalFilterOperator = LogicalFilterOperator.And;
-    FilterCaseSensitivity filterCaseSensitivity = FilterCaseSensitivity.CaseInsensitive;
+	RadzenDataGrid<Address> grid = new();
+	LogicalFilterOperator logicalFilterOperator = LogicalFilterOperator.And;
+	FilterCaseSensitivity filterCaseSensitivity = FilterCaseSensitivity.CaseInsensitive;
 
-    IEnumerable<Address> addresses;
-    IEnumerable<Employee> employees;
+	IEnumerable<Address> addresses = [];
+	IEnumerable<Employee> employees = [];
 
-    protected override async Task OnInitializedAsync()
-    {
-        var context = DbFactory.CreateDbContext();
-        await base.OnInitializedAsync();
+	string customerFullName = "";
 
-        var customer = await context.Customer
-                            .Include(c => c.Address)
-                            .SingleOrDefaultAsync(e => e.CustomerId == CustomerId);
+	protected override async Task OnInitializedAsync()
+	{
+		var context = DbFactory.CreateDbContext();
+		await base.OnInitializedAsync();
 
-        employees = context.Employee.ToList();
+		var customer = await context.Customer
+							.Include(c => c.Address)
+							.SingleOrDefaultAsync(e => e.CustomerId == CustomerId);
 
-        if (customer != null)
-        {
-            addresses = customer.Address;
-        }
-    }
+		employees = context.Employee.ToList();
 
-    private async Task AddRow()
-    {
-        var newAddress = new Address { CustomerId = CustomerId };
-        addresses = addresses.Append(newAddress);
-        grid.EditRow(newAddress);
-    }
+		if (customer != null)
+		{
+			customerFullName = $"{customer.CustomerFirstName} {customer.CustomerName}";
 
-    private async Task OnUpdateRow(Address address)
-    {
-        try
-        {
-            using var context = DbFactory.CreateDbContext();
+			if (customer.Address != null)
+			{
+				addresses = customer.Address;
+			}
+		}
+	}
 
-            var existingAddr = await context.Address.FindAsync(address.AddressId);
+	private async Task AddRow()
+	{
+		var newAddress = new Address { CustomerId = CustomerId };
+		addresses = addresses.Append(newAddress);
+		await grid.EditRow(newAddress);
+	}
 
-            if (existingAddr is not null)
-            {
-                existingAddr.Country = address.Country;
-                existingAddr.Region = address.Region;
-                existingAddr.ZipCode = address.ZipCode;
-                existingAddr.City = address.City;
-                existingAddr.Street = address.Street;
+	private async Task OnUpdateRow(Address address)
+	{
+		try
+		{
+			using var context = DbFactory.CreateDbContext();
 
-                existingAddr.CustomerId = address.CustomerId;
-                existingAddr.EmployeeId = address.EmployeeId;
+			var existingAddr = await context.Address.FindAsync(address.AddressId);
 
-                context.Address.Update(existingAddr);
-            }
-            else
-            {
-                context.Address.Add(address);
-            }
+			if (existingAddr is not null)
+			{
+				existingAddr.Country = address.Country;
+				existingAddr.Region = address.Region;
+				existingAddr.ZipCode = address.ZipCode;
+				existingAddr.City = address.City;
+				existingAddr.Street = address.Street;
 
-            await context.SaveChangesAsync();
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine($"Error on update: {ex.Message}");
-        }
-    }
+				existingAddr.CustomerId = address.CustomerId;
+				existingAddr.EmployeeId = address.EmployeeId;
 
-    private async Task OnDeleteRow(Address address)
-    {
-        try
-        {
-            using var context = DbFactory.CreateDbContext();
-            context.Address.Remove(address);
-            await context.SaveChangesAsync();
+				context.Address.Update(existingAddr);
+			}
+			else
+			{
+				context.Address.Add(address);
+			}
 
-            this.addresses = this.addresses.Where(a => a.AddressId != address.AddressId);
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine($"Error on delete: {ex.Message}");
-        }
-    }
+			await context.SaveChangesAsync();
+		}
+		catch (Exception ex)
+		{
+			Console.WriteLine($"Error on update: {ex.Message}");
+		}
+	}
+
+	private async Task OnDeleteRow(Address address)
+	{
+		try
+		{
+			using var context = DbFactory.CreateDbContext();
+			context.Address.Remove(address);
+			await context.SaveChangesAsync();
+
+			this.addresses = this.addresses.Where(a => a.AddressId != address.AddressId);
+		}
+		catch (Exception ex)
+		{
+			Console.WriteLine($"Error on delete: {ex.Message}");
+		}
+	}
 }

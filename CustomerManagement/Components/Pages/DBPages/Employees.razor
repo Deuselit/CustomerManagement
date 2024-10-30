@@ -6,6 +6,8 @@
 @inject IDbContextFactory<CustomerManagement.Data.CustomerManagementContext> DbFactory
 @inject NavigationManager NavigationManager
 
+<PageTitle>Employees</PageTitle>
+
 <RadzenStack Orientation="Orientation.Vertical" AlignItems="AlignItems.Center" JustifyContent="JustifyContent.Center" Style="padding-top:0.5%; background-color:var(--rz-primary)">
     <RadzenText TextStyle="TextStyle.H4" Text="Employees" Style="color:var(--rz-on-primary)" />
 </RadzenStack>
@@ -59,12 +61,12 @@
 
 
 @code {
-    RadzenDataGrid<Employee> grid;
+    RadzenDataGrid<Employee> grid = new();
 
     LogicalFilterOperator logicalFilterOperator = LogicalFilterOperator.And;
     FilterCaseSensitivity filterCaseSensitivity = FilterCaseSensitivity.CaseInsensitive;
 
-    IEnumerable<Employee> employees;
+    IEnumerable<Employee> employees = [];
 
     protected override async Task OnInitializedAsync()
     {
@@ -78,7 +80,7 @@
     {
         var newEmployee = new Employee();
         employees = employees.Append(newEmployee);
-        grid.EditRow(newEmployee);
+        await grid.EditRow(newEmployee);
     }
 
     private async Task OnUpdateRow(Employee employee)
