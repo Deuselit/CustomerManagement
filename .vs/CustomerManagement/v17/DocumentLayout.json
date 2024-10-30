@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\Users\\David\\Desktop\\Programming\\C#\\CustomerManagement\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{DAA9F125-5C2B-4C88-B9A1-C359435EEE35}|CustomerManagement\\CustomerManagement.csproj|c:\\users\\david\\desktop\\programming\\c#\\customermanagement\\customermanagement\\components\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DAA9F125-5C2B-4C88-B9A1-C359435EEE35}|CustomerManagement\\CustomerManagement.csproj|solutionrelative:customermanagement\\components\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DAA9F125-5C2B-4C88-B9A1-C359435EEE35}|CustomerManagement\\CustomerManagement.csproj|c:\\users\\david\\desktop\\programming\\c#\\customermanagement\\customermanagement\\components\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DAA9F125-5C2B-4C88-B9A1-C359435EEE35}|CustomerManagement\\CustomerManagement.csproj|solutionrelative:customermanagement\\components\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{DAA9F125-5C2B-4C88-B9A1-C359435EEE35}|CustomerManagement\\CustomerManagement.csproj|c:\\users\\david\\desktop\\programming\\c#\\customermanagement\\customermanagement\\components\\pages\\dbpages\\customers.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{DAA9F125-5C2B-4C88-B9A1-C359435EEE35}|CustomerManagement\\CustomerManagement.csproj|solutionrelative:customermanagement\\components\\pages\\dbpages\\customers.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -39,12 +47,8 @@
       "RelativeMoniker": "D:0:0:{DAA9F125-5C2B-4C88-B9A1-C359435EEE35}|CustomerManagement\\CustomerManagement.csproj|solutionrelative:customermanagement\\components\\pages\\error.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DAA9F125-5C2B-4C88-B9A1-C359435EEE35}|CustomerManagement\\CustomerManagement.csproj|c:\\users\\david\\desktop\\programming\\c#\\customermanagement\\customermanagement\\components\\ui\\items\\defaultbutton.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{DAA9F125-5C2B-4C88-B9A1-C359435EEE35}|CustomerManagement\\CustomerManagement.csproj|solutionrelative:customermanagement\\components\\ui\\items\\defaultbutton.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DAA9F125-5C2B-4C88-B9A1-C359435EEE35}|CustomerManagement\\CustomerManagement.csproj|c:\\users\\david\\desktop\\programming\\c#\\customermanagement\\customermanagement\\components\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{DAA9F125-5C2B-4C88-B9A1-C359435EEE35}|CustomerManagement\\CustomerManagement.csproj|solutionrelative:customermanagement\\components\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{DAA9F125-5C2B-4C88-B9A1-C359435EEE35}|CustomerManagement\\CustomerManagement.csproj|c:\\users\\david\\desktop\\programming\\c#\\customermanagement\\customermanagement\\components\\ui\\defaultbutton.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DAA9F125-5C2B-4C88-B9A1-C359435EEE35}|CustomerManagement\\CustomerManagement.csproj|solutionrelative:customermanagement\\components\\ui\\defaultbutton.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DAA9F125-5C2B-4C88-B9A1-C359435EEE35}|CustomerManagement\\CustomerManagement.csproj|c:\\users\\david\\desktop\\programming\\c#\\customermanagement\\customermanagement\\components\\app.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -57,10 +61,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{DAA9F125-5C2B-4C88-B9A1-C359435EEE35}|CustomerManagement\\CustomerManagement.csproj|c:\\users\\david\\desktop\\programming\\c#\\customermanagement\\customermanagement\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DAA9F125-5C2B-4C88-B9A1-C359435EEE35}|CustomerManagement\\CustomerManagement.csproj|solutionrelative:customermanagement\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DAA9F125-5C2B-4C88-B9A1-C359435EEE35}|CustomerManagement\\CustomerManagement.csproj|c:\\users\\david\\desktop\\programming\\c#\\customermanagement\\customermanagement\\components\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{DAA9F125-5C2B-4C88-B9A1-C359435EEE35}|CustomerManagement\\CustomerManagement.csproj|solutionrelative:customermanagement\\components\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DAA9F125-5C2B-4C88-B9A1-C359435EEE35}|CustomerManagement\\CustomerManagement.csproj|c:\\users\\david\\desktop\\programming\\c#\\customermanagement\\customermanagement\\components\\layout\\emptylayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -93,7 +93,7 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "Adresses.razor",
               "DocumentMoniker": "C:\\Users\\David\\Desktop\\Programming\\C#\\CustomerManagement\\CustomerManagement\\Components\\Pages\\DBPages\\Adresses.razor",
               "RelativeDocumentMoniker": "CustomerManagement\\Components\\Pages\\DBPages\\Adresses.razor",
@@ -102,24 +102,11 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-10-27T23:19:50.856Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "App.razor",
-              "DocumentMoniker": "C:\\Users\\David\\Desktop\\Programming\\C#\\CustomerManagement\\CustomerManagement\\Components\\App.razor",
-              "RelativeDocumentMoniker": "CustomerManagement\\Components\\App.razor",
-              "ToolTip": "C:\\Users\\David\\Desktop\\Programming\\C#\\CustomerManagement\\CustomerManagement\\Components\\App.razor",
-              "RelativeToolTip": "CustomerManagement\\Components\\App.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAADwvwwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-27T17:17:00.691Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Customer.cs",
               "DocumentMoniker": "C:\\Users\\David\\Desktop\\Programming\\C#\\CustomerManagement\\CustomerManagement\\Models\\Customer.cs",
               "RelativeDocumentMoniker": "CustomerManagement\\Models\\Customer.cs",
@@ -127,21 +114,19 @@
               "RelativeToolTip": "CustomerManagement\\Models\\Customer.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAqwAoAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-27T16:19:51.52Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-27T16:19:51.52Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "DefaultButton.razor",
-              "DocumentMoniker": "C:\\Users\\David\\Desktop\\Programming\\C#\\CustomerManagement\\CustomerManagement\\Components\\UI\\Items\\DefaultButton.razor",
-              "RelativeDocumentMoniker": "CustomerManagement\\Components\\UI\\Items\\DefaultButton.razor",
-              "ToolTip": "C:\\Users\\David\\Desktop\\Programming\\C#\\CustomerManagement\\CustomerManagement\\Components\\UI\\Items\\DefaultButton.razor",
-              "RelativeToolTip": "CustomerManagement\\Components\\UI\\Items\\DefaultButton.razor",
+              "DocumentMoniker": "C:\\Users\\David\\Desktop\\Programming\\C#\\CustomerManagement\\CustomerManagement\\Components\\UI\\DefaultButton.razor",
+              "RelativeDocumentMoniker": "CustomerManagement\\Components\\UI\\DefaultButton.razor",
+              "ToolTip": "C:\\Users\\David\\Desktop\\Programming\\C#\\CustomerManagement\\CustomerManagement\\Components\\UI\\DefaultButton.razor",
+              "RelativeToolTip": "CustomerManagement\\Components\\UI\\DefaultButton.razor",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-27T16:41:37.974Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-27T16:41:37.974Z"
             },
             {
               "$type": "Document",
@@ -157,7 +142,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "Employee.cs",
               "DocumentMoniker": "C:\\Users\\David\\Desktop\\Programming\\C#\\CustomerManagement\\CustomerManagement\\Models\\Employee.cs",
               "RelativeDocumentMoniker": "CustomerManagement\\Models\\Employee.cs",
@@ -165,12 +150,11 @@
               "RelativeToolTip": "CustomerManagement\\Models\\Employee.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAqwA8AAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-28T17:18:58.813Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-28T17:18:58.813Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "Address.cs",
               "DocumentMoniker": "C:\\Users\\David\\Desktop\\Programming\\C#\\CustomerManagement\\CustomerManagement\\Models\\Address.cs",
               "RelativeDocumentMoniker": "CustomerManagement\\Models\\Address.cs",
@@ -178,12 +162,11 @@
               "RelativeToolTip": "CustomerManagement\\Models\\Address.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-28T17:21:00.178Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-28T17:21:00.178Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "Routes.razor",
               "DocumentMoniker": "C:\\Users\\David\\Desktop\\Programming\\C#\\CustomerManagement\\CustomerManagement\\Components\\Routes.razor",
               "RelativeDocumentMoniker": "CustomerManagement\\Components\\Routes.razor",
@@ -195,7 +178,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "Sidebar.razor",
               "DocumentMoniker": "C:\\Users\\David\\Desktop\\Programming\\C#\\CustomerManagement\\CustomerManagement\\Components\\UI\\Sidebar.razor",
               "RelativeDocumentMoniker": "CustomerManagement\\Components\\UI\\Sidebar.razor",
@@ -203,12 +186,11 @@
               "RelativeToolTip": "CustomerManagement\\Components\\UI\\Sidebar.razor",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-27T14:12:15.739Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-27T14:12:15.739Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "Employees.razor",
               "DocumentMoniker": "C:\\Users\\David\\Desktop\\Programming\\C#\\CustomerManagement\\CustomerManagement\\Components\\Pages\\DBPages\\Employees.razor",
               "RelativeDocumentMoniker": "CustomerManagement\\Components\\Pages\\DBPages\\Employees.razor",
@@ -216,12 +198,11 @@
               "RelativeToolTip": "CustomerManagement\\Components\\Pages\\DBPages\\Employees.razor",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-27T14:52:04.01Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-27T14:52:04.01Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "Home.razor",
               "DocumentMoniker": "C:\\Users\\David\\Desktop\\Programming\\C#\\CustomerManagement\\CustomerManagement\\Components\\Pages\\Home.razor",
               "RelativeDocumentMoniker": "CustomerManagement\\Components\\Pages\\Home.razor",
@@ -229,24 +210,24 @@
               "RelativeToolTip": "CustomerManagement\\Components\\Pages\\Home.razor",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-27T14:32:51.723Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-27T14:32:51.723Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 1,
               "Title": "_Imports.razor",
               "DocumentMoniker": "C:\\Users\\David\\Desktop\\Programming\\C#\\CustomerManagement\\CustomerManagement\\Components\\_Imports.razor",
               "RelativeDocumentMoniker": "CustomerManagement\\Components\\_Imports.razor",
               "ToolTip": "C:\\Users\\David\\Desktop\\Programming\\C#\\CustomerManagement\\CustomerManagement\\Components\\_Imports.razor",
               "RelativeToolTip": "CustomerManagement\\Components\\_Imports.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAADwvw4AAAAtAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-27T16:48:17.129Z"
+              "WhenOpened": "2024-10-27T16:48:17.129Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "Error.razor",
               "DocumentMoniker": "C:\\Users\\David\\Desktop\\Programming\\C#\\CustomerManagement\\CustomerManagement\\Components\\Pages\\Error.razor",
               "RelativeDocumentMoniker": "CustomerManagement\\Components\\Pages\\Error.razor",
@@ -254,8 +235,7 @@
               "RelativeToolTip": "CustomerManagement\\Components\\Pages\\Error.razor",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAABNAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-27T14:54:47.629Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-27T14:54:47.629Z"
             },
             {
               "$type": "Document",
@@ -271,32 +251,45 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Customers.razor",
               "DocumentMoniker": "C:\\Users\\David\\Desktop\\Programming\\C#\\CustomerManagement\\CustomerManagement\\Components\\Pages\\DBPages\\Customers.razor",
               "RelativeDocumentMoniker": "CustomerManagement\\Components\\Pages\\DBPages\\Customers.razor",
               "ToolTip": "C:\\Users\\David\\Desktop\\Programming\\C#\\CustomerManagement\\CustomerManagement\\Components\\Pages\\DBPages\\Customers.razor",
               "RelativeToolTip": "CustomerManagement\\Components\\Pages\\DBPages\\Customers.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFUAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAABaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-10-27T23:19:34.397Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 0,
               "Title": "MainLayout.razor",
               "DocumentMoniker": "C:\\Users\\David\\Desktop\\Programming\\C#\\CustomerManagement\\CustomerManagement\\Components\\Layout\\MainLayout.razor",
               "RelativeDocumentMoniker": "CustomerManagement\\Components\\Layout\\MainLayout.razor",
               "ToolTip": "C:\\Users\\David\\Desktop\\Programming\\C#\\CustomerManagement\\CustomerManagement\\Components\\Layout\\MainLayout.razor",
               "RelativeToolTip": "CustomerManagement\\Components\\Layout\\MainLayout.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAoAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-27T14:26:52.816Z"
+              "WhenOpened": "2024-10-27T14:26:52.816Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 12,
+              "Title": "App.razor",
+              "DocumentMoniker": "C:\\Users\\David\\Desktop\\Programming\\C#\\CustomerManagement\\CustomerManagement\\Components\\App.razor",
+              "RelativeDocumentMoniker": "CustomerManagement\\Components\\App.razor",
+              "ToolTip": "C:\\Users\\David\\Desktop\\Programming\\C#\\CustomerManagement\\CustomerManagement\\Components\\App.razor",
+              "RelativeToolTip": "CustomerManagement\\Components\\App.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvwwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-27T17:17:00.691Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\David\\Desktop\\Programming\\C#\\CustomerManagement\\CustomerManagement\\Program.cs",
               "RelativeDocumentMoniker": "CustomerManagement\\Program.cs",
